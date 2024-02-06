@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<form>
+		
+		<label>Name</label><br>
+		<input type="" name="" id="name"><br><br>
+
+		<label>Email</label><br>
+		<input type="" name="" id="email"><br><br>
+
+		<label>City</label><br>
+		<input type="" name="" id="city"><br><br>
+
+		<button id="btninsert" onclick="submitform()" type="button">Submit</button>
+		<button id="btnedit" onclick="updatedata()" type="button" style="display: none;">Update</button>
+
+	</form><br><br>
+
+	<table border="1" cellpadding="20" cellspacing="0">
+		<thead>
+			<th>Name</th>
+			<th>Email</th>
+			<th>City</th>
+		</thead>
+		<tbody id="tb">
+			
+		</tbody>
+	</table>
+
+	<script type="text/javascript">
+		
+		// function submitform()
+		// {
+		// 	let name = document.getElementById('name').value;
+		// 	let email = document.getElementById('email').value;
+		// 	let city = document.getElementById('city').value;
+
+		// 	let table = `<tr>
+		// 					<td>${name}</td>
+		// 					<td>${email}</td>
+		// 					<td>${city}</td>
+		// 				</tr>`;
+		// 	document.getElementById('tb').innerHTML += table;
+		// 	clearform()
+		// }
+
+		// function clearform()
+		// {
+		// 	let name = document.getElementById('name').value = "";
+		// 	let email = document.getElementById('email').value = "";
+		// 	let city = document.getElementById('city').value = "";
+		// }
+
+		let user = {id:0,name:"",email:"",city:""};
+		let users = [];
+		let i = 0;
+
+		function submitform()
+		{
+			user = {};
+			user.id = 1;
+			i++;
+			user.name = document.getElementById('name').value;
+			user.email = document.getElementById('email').value;
+			user.city = document.getElementById('city').value;
+			users.push(user);
+			insertdata();
+			clearform();
+		}
+
+		function insertdata()
+		{
+			let table = '';
+			for(let u of users)
+			{
+				table += `<tr>
+		 					<td>${u.name}</td>
+							<td>${u.email}</td>
+							<td>${u.city}</td>
+							<td><a href="#" onclick="editdata(${u.id})" > EditData </a> </td>
+							<td><a href="#" onclick="deletedata(${u.id})" > Delete </a> </td>
+						</tr>`
+			}
+			document.getElementById('tb').innerHTML = table;
+		}
+
+
+		
+
+		function editdata(id)
+		{
+			for(let u of users)
+			{
+				if(u.id == id)
+				{
+					document.getElementById('name').value = u.name;
+					document.getElementById('email').value = u.email;
+					document.getElementById('city').value = u.city;
+
+					document.getElementById('btnedit').removeAttribute('style');
+					document.getElementById('btnedit').setAttribute('uid',u.id);
+					document.getElementById('btninsert').setAttribute('style','display : none')
+				}
+			}
+		}
+
+		function updatedata()
+		{
+			user = {};
+			user.id = parseInt(document.getElementById('btnedit').getAttribute('uid'));
+			user.name = document.getElementById('name').value ;
+			user.email = document.getElementById('email').value;
+			user.city = document.getElementById('city').value;
+
+			for(let u of users)
+			{
+				if(u.id == user.id)
+				{
+					let index = users.indexOf(u);
+					users[index] = user;
+					break;
+				}
+			}
+
+			insertdata();
+			document.getElementById('btnedit').setAttribute('style','display:none');
+			document.getElementById('btninsert').removeAttribute('style');
+
+		}
+
+		function deletedata(id)
+		{
+			for(let u of users)
+			{
+				if(u.id == id)
+				{
+					let index = users.indexOf(u);
+					users.splice(index,1);
+					break;
+				}				
+			}
+			insertdata();
+		}
+
+
+		function clearform()
+		{
+			let name = document.getElementById('name').value = "";
+			let email = document.getElementById('email').value = "";
+			let city = document.getElementById('city').value = "";
+		}
+
+	</script>
+
+
+
+</body>
+</html>

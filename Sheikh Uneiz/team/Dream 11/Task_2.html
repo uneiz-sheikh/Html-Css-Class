@@ -1,0 +1,241 @@
+s
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Team</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .background {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background: url('back.jpg') repeat center;
+        background-size: cover;
+        background-color: rgba(10, 10, 10, 0.70)!important;
+        background-blend-mode: overlay;
+        overflow-x: hidden;
+    }
+    
+    .Players {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 0;
+    }
+    
+    .Players:hover {
+        box-shadow: 0px 5px 10px 3px #00cec9;
+        border: 2px solid #00cec9;
+        z-index: 2;
+        transition: .5s all;
+    }
+    
+    .row {
+        border: 3px solid #00cec9;
+    }
+    
+    .field {
+        border-right: 3px solid #00cec9;
+    }
+    
+    p {
+        color: white;
+    }
+    
+    .Players img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        margin-left: 20px;
+    }
+    
+    .plus {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+        margin-right: 20px;
+        margin-left: auto;
+        height: 30px;
+        width: 30px;
+        border-radius: 50px;
+    }
+    
+    .plus a i {
+        font-size: 15px;
+        color: green;
+    }
+    
+    #football {
+        height: 100px;
+        width: 150px;
+    }
+    
+    #head {
+        user-select: none;
+        text-shadow: 4px 4px rgba(211, 84, 0, 0.90);
+    }
+    
+    h2 {
+        color: #f6b93b;
+    }
+</style>
+
+<body class="background d-flex justify-content-center pb-4">
+
+    <!-- <img src="kkr4.png"> -->
+
+    <div class="container m-sm-4">
+
+        <div style="color: #00cec9;" class=" animate__animated animate__zoomIn animate__delay-1s my-2 text-center display-4  fw-bold">
+            <img id="football" src="football.jpg"><span id="head">FOOTBALL TEAM</span>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 p-sm-4 field">
+                <h2 class="text-center  mb-4">All Players</h2>
+                <div class="text-center h3 text-danger" id="allCounting">15</div>
+                <div id="unselected-player">
+
+                    <div id="one" class="Players p-2 d-flex align-items-center">
+                        <div class="ff"><img src="ron.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">CR7</p>
+                        <div id="border1" class="plus border border-3 border-success">
+                            <a type="button" class="" href="#" onclick="addPlayer('one','icon1','border1')"><i id="icon1" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="two" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="messi.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Leo Messi</p>
+                        <div id="bord2" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('two','icon2','bord2')"><i id="icon2" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="three" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="salah.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Mohammad Salah</p>
+                        <div id="bord3" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('three','icon3','bord3')"><i id="icon3" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="four" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="kaka.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Kaka</p>
+                        <div id="bord4" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('four','icon4','bord4')"><i id="icon4" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="five" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="neymar.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Neymar</p>
+                        <div id="bord5" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('five','icon5','bord5')"><i id="icon5" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="six" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="kyl.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Kylian M Bappe</p>
+                        <div id="bord6" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('six','icon6','bord6')"><i id="icon6" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="seven" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="virgil.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Virgil Van</p>
+                        <div id="bord7" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('seven','icon7','bord7')"><i id="icon7" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="eight" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="erling.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Erling Haaland</p>
+                        <div id="bord8" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('eight','icon8','bord8')"><i id="icon8" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="nine" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="harry.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Harry Kane</p>
+                        <div id="bord9" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('nine','icon9','bord9')"><i id="icon9" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="ten" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="kareem.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Karim Benzema</p>
+                        <div id="bord10" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('ten','icon10','bord10')"><i id="icon10" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="eleven" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="robert.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Robert Lewandoski</p>
+                        <div id="bord11" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('eleven','icon11','bord11')"><i id="icon11" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="twelve" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="kev.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Kevin De Bruyne</p>
+                        <div id="bord12" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('twelve','icon12','bord12')"><i id="icon12" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="thirteen" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="kate.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">N' Golo Kante</p>
+                        <div id="bord13" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('thirteen','icon13','bord13')"><i id="icon13" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="fourteen" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="ibrahim.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Zlatan Ibrahimovic</p>
+                        <div id="bord14" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('fourteen','icon14','bord14')"><i id="icon14" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                    <div id="Fifteen" class="Players p-2 d-flex align-items-center">
+                        <div class=""><img src="rony.jpg"></div>
+                        <p class="pt-4 ms-5 fw-bold fs-4">Wayne Rooney</p>
+                        <div id="bord15" class="plus border border-3 border-success">
+                            <a type="button" href="#" onclick="addPlayer('Fifteen','icon15','bord15')"><i id="icon15" class="fas fa-plus text-success"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 p-sm-4 ">
+                <h2 class="text-center  mb-4">Selected Players</h2>
+                <h3 class="text-center text-danger" id="selectedPlayerCounting">0</h3>
+                <div id="selectedPlayer">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="./task.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

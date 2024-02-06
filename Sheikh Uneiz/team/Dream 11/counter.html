@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .background {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            background: url('back.jpg') repeat center;
+            background-size: cover;
+            background-color: rgba(10, 10, 10, 0.70)!important;
+            background-blend-mode: overlay;
+            overflow-x: hidden;
+        }
+        
+        .Players {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 0;
+        }
+        
+        .Players:hover {
+            box-shadow: 0px 5px 10px 3px #00cec9;
+            border: 2px solid #00cec9;
+            z-index: 2;
+            transition: .5s all;
+        }
+        
+        .field {
+            border-right: 3px solid #00cec9;
+        }
+        
+        p {
+            color: white;
+        }
+        
+        .Players img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            margin-left: 20px;
+        }
+        
+        .plus {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0px;
+            margin-right: 20px;
+            margin-left: auto;
+            height: 30px;
+            width: 30px;
+            border-radius: 50px;
+        }
+        
+        .plus a i {
+            font-size: 15px;
+            color: green;
+        }
+        
+        #football {
+            height: 100px;
+            width: 150px;
+        }
+        
+        #head {
+            text-shadow: 4px 4px rgba(211, 84, 0, 0.90);
+        }
+        
+        h2 {
+            color: #f6b93b;
+        }
+    </style>
+
+</head>
+
+<body class="background">
+
+    <a onclick="team()" href="#" id="Btn" class="mt-5 ms-5 btn btn-outline-warning fw-bold px-5">PLAYER'S</a>
+
+
+
+    <div class="container border border-2 border-warning my-5">
+        <div class="row p-4 mt-3">
+            <div class="col-sm-6">
+                <div id="unselected-player">
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div id="selectedPlayer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function team() {
+            const Players = [{
+                img: 'ron.jpg',
+                name: 'CR7'
+            }, {
+                img: 'messi.jpg',
+                name: 'Leo Messi'
+            }, {
+                img: 'salah.jpg',
+                name: 'Mohammad Salah'
+            }, {
+                img: 'kaka.jpg',
+                name: 'Kaka'
+            }, {
+                img: 'neymar.jpg',
+                name: 'Neymar'
+            }, {
+                img: 'kyl.jpg',
+                name: 'Kylian M Bappe'
+            }, {
+                img: 'erling.jpg',
+                name: 'Erling Haaland'
+            }, {
+                img: 'kate.jpg',
+                name: 'N. Golo Kante'
+            }];
+
+            let text = "";
+            Players.forEach(function(player, index) {
+                text += `<div id="Player_${index+1}" class="Players p-2 d-flex align-items-center">
+        					<div class="ff"><img src="${player.img}"></div>
+        					<p class="pt-4 ms-5 fw-bold fs-4">${player.name}</p>
+        					<div id="border_${index+1}" class="plus border border-3 border-success">
+        					  <a type="button" class="" href="#" onclick="addPlayer('Player_${index+1}','icon_${index+1}','border_${index+1}')"><i id="icon_${index+1}" class="fas fa-plus text-success"></i></a>
+        					</div>													 				
+        			     </div>`;
+            });
+            document.getElementById('unselected-player').innerHTML = text;
+
+            // for (var i = 0; i < Player.length; i++) {
+            //     text += `<div id="Player_${i}" class="Players p-2 d-flex align-items-center">
+            // 					<div class="ff"><img src="${Player[i].img}"></div>
+            // 					<p class="pt-4 ms-5 fw-bold fs-4">${Player[i].name}</p>
+            // 					<div id="border1" class="plus border border-3 border-success">
+            // 					<a type="button" class="" href="#"  onclick="addPlayer('one',      'icon1','border1')"><i id="icon1" class="fas fa-plus text-success"></i></a>
+            // 					</div>													 				
+            // 			  </div>`;
+
+            // }
+
+            var btn = document.getElementById('Btn');
+            btn.style.display = "none";
+        }
+
+
+        function addPlayer(a, b, c, d) {
+            var player = document.getElementById(a);
+            var sPlayer = player.cloneNode(true);
+            var icon = document.getElementById(b);
+            var allCounting = document.getElementById('allCounting');
+
+            if (icon.classList.contains('fa-plus') == true) {
+                document.getElementById("selectedPlayer").appendChild(sPlayer);
+                document.getElementById(a).remove();
+                var icons = document.getElementById(b);
+                icons.classList.remove('fa-plus');
+                icons.classList.add('fa-minus');
+                icons.classList.add('text-danger');
+                let border = document.getElementById(c);
+                border.classList.add('border-danger');
+
+            } else if (icon.classList.contains('fa-minus') == true) {
+                document.getElementById("unselected-player").prepend(player);
+                var icons = document.getElementById(b);
+                icons.classList.add('fa-plus');
+                icons.classList.remove('fa-minus');
+                icons.classList.remove('text-danger');
+                border = document.getElementById(c);
+                border.classList.remove('border-danger');
+            }
+        };
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

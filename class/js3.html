@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.abc 
+		{
+			width: 80%;
+			padding: 15px;
+			background-color: #e7e7e7;
+			margin: 30px auto;
+		}
+		nav 
+		{
+			width: 100%;
+			padding: 10px;
+			background-color: #e7e7e7;
+		}
+		nav ul
+		{
+			text-align: center;
+			list-style: none;
+		}
+		nav ul li 
+		{
+			display: inline-block;
+			margin: 0px 15px;
+		}
+		span 
+		{
+			font-size: 45px;
+			color: #fff;
+			display: none;
+		}
+		@media screen and (max-width:767px)
+		{
+			nav ul
+			{
+				display: none;
+			}
+			span 
+			{
+				display: block;
+				text-align: right;
+				color: #000;
+			}
+			nav ul li 
+			{
+				display: block;
+				margin: 10px 0px;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<nav>
+		<span onclick="menu()">&#9776;</span>
+		<ul id="list">
+			<li>Home</li>
+			<li>About</li>
+			<li>Service</li>
+			<li>Gallery</li>
+			<li>Contact</li>
+		</ul>
+	</nav>
+
+	<h1 id="head">Heading First</h1>
+
+	<div id="box">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+
+	<button onclick="color()">Show color</button>
+	<button onclick="hidecolor()">Hide Color</button>
+
+	<script type="text/javascript">
+		
+		// let x = document.getElementById('head');
+		// console.log(x)
+
+		// let x = document.getElementById('head').innerHTML;
+		// console.log(x)
+
+		// let x = document.getElementById('head').innerHTML = "Welcome";
+		// console.log(x)
+
+		// let x = document.getElementById('head').getAttribute('class');
+		// console.log(x)
+
+		// document.getElementById('box').setAttribute('style','background-color:blue')
+		
+		// document.getElementById('box').setAttribute('class','abc')
+
+		// function color()
+		// {
+		// 	document.getElementById('box').setAttribute('class','abc')
+		// }
+
+		// function hidecolor()
+		// {
+		// 	document.getElementById('box').removeAttribute('class','abc')
+		// }
+
+		// function color()
+		// {
+		// 	document.getElementById('box').style.display = "none";
+		// }
+
+		// function hidecolor()
+		// {
+		// 	document.getElementById('box').style.display = "block";
+		// }
+
+		let x = document.getElementById('list')
+		function menu()
+		{
+			if(x.style.display === "none")
+			{
+				x.style.display = "block";
+			}
+			else
+			{
+				x.style.display = "none"
+			}
+		}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+@media screen and (max-width:767px)
+{
+	#banner
+	{
+		height: 500px;
+	}
+	.banner_cont
+	{
+		height: 500px;
+	}
+	h1
+	{
+		font-size: 45px;
+	}
+	.banner_heading
+	{
+		font-size: 18px;		
+	}
+	.banner_para
+	{
+		width: 100%;
+		padding: 5px;
+	}
+	.sub_para
+	{
+		width: 100%;
+		padding: 5px;
+	}
+	.serv_img img
+	{
+		width: 60%;	
+	}
+	#product ul
+	{
+		flex-wrap: wrap;
+	}
+	.product_img a:nth-child(2)
+	{
+		left: 92%;
+	}
+	.about_img h3 , .about_img2 h3
+	{
+		font-size: 18px;
+	}
+	.blog_img
+	{
+		width: 100%;
+		height: 400px;
+	}	
+	.logo img
+	{
+		width: 110px;
+		height: 80px;
+	}
+	.serv_cont a 
+	{
+		left: 35px!important;
+	}
+	.tablink
+	{
+		padding: 10px 0px;
+	}	
+}
+@media screen and (max-width:992px)
+{
+	.about_img
+	{
+		justify-content: center!important;
+	}
+	.about_img p,h3
+	{
+		text-align: center;
+		margin-top: 20px!important;
+	}
+	.about_img2
+	{
+		justify-content: center!important;
+	}
+	.about_img2 p,h3
+	{
+		text-align: center;
+		margin-top: 20px!important;
+	}
+	.about_img2 img
+	{
+		position: absolute;
+		top: 20px;
+		left: 20px;
+	}
+	.serv_cont a 
+	{
+		left: 25px;
+	}
+	.contact_detail
+	{
+		margin-top: 50px;
+	}
+	.contact_detail ul
+	{
+		margin-left: 0px!important;
+	}
+	.tab
+	{
+		flex-wrap: wrap;
+	}
+}
+@media screen and (max-width:575px)
+{
+	.contact_detail
+	{
+		text-align: center;
+	}
+	.contact_detail p 
+	{
+		text-align: center;
+		margin-top: 20px!important;
+	}	
+	.contact_detail ul
+	{
+		margin-top: 20px!important;
+	}
+}
+@media screen and (max-width:480px)
+{
+	h1
+	{
+		font-size: 30px;
+		font-weight: 800;
+	}
+	h3
+	{
+		font-size: 18px;
+	}
+	.sub_para
+	{
+		font-size: 14px;
+	}
+	.banner_para
+	{
+		font-size: 14px;
+	}
+	.serv_img img
+	{
+	   width: 150px;
+	}
+	.product_img a:nth-child(2)
+	{
+		left: 90%;
+		background-color: unset;
+	}
+	.blog_img
+	{
+		width: 100%;
+		height: 300px;
+	}
+	.logo img
+	{
+		height: 70px;
+	}
+	.serv_cont a 
+	{
+		left: 25px!important;
+	}
+}
+@media screen and (max-width:375px)
+{
+	.product_img a:nth-child(2)
+	{
+		left: 85%;
+	}
+}
+@media screen and (max-width:350px)
+{
+	h1
+	{
+		font-size: 24px;
+	}
+	.banner_heading
+	{
+		font-size: 16px;		
+	}
+	.serv_img img
+	{
+	   width: 100px;
+	}
+	.product_img a:nth-child(2)
+	{
+		left: 88%;
+	}
+	.nav-item
+	{
+		margin: 0px!important;
+	}	
+	
+}
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<ul id="prolist">
+		
+	</ul>
+
+	<br><br>
+
+	<form onsubmit="sumbitproduct(event)" name="products">
+
+		<label>Product Name</label><br>
+		<input type="" name="proname"><br><br>
+
+		<label>Product Price</label><br>
+		<input type="" name="proprice"><br><br>
+
+		<label>Product Description</label><br>
+		<input type="" name="prodes"><br><br>
+
+		<label>Product Quantity</label><br>
+		<input type="" name="proqty"><br><br>
+
+		<button id="btn1" type="submit">Submit</button>
+		<button id="btn2" type="button">Update</button>
+
+	</form>
+
+	<ul id="cardlist">
+		
+	</ul>
+
+	<br><br>
+
+	<script type="text/javascript">
+		
+		// function sumbitproduct(e)
+		// {
+		// 	e.preventDefault();
+		// 	console.log('Save Data');
+		// }
+
+
+		// let productarray = [];
+		// function sumbitproduct(e)
+		// {
+		// 	e.preventDefault();
+		// 	console.log('Save Data',e.target.proname.value,e.target.proprice.value);
+		// }
+
+		// let productarray = [];
+		// function sumbitproduct(e)
+		// {
+		// 	e.preventDefault();
+		// 	let proname = e.target.proname
+		// 	let proprice = e.target.proprice
+		// 	let prodes = e.target.prodes
+		// 	let proqty = e.target.proqty
+
+		// 	console.log('Save Data',proname.value,proprice.value,prodes.value,proqty.value)
+		// }
+
+
+		let productarray = [];
+		let cardpro = [];
+		let prolist = document.getElementById('prolist');
+		let cardlist = document.getElementById('cardlist');
+		let products = document.forms['products'];
+		let btn1 = document.getElementById('btn1');
+		let btn2 = document.getElementById('btn2');
+		btn2.style.display = "none"
+		function sumbitproduct(e)
+		{
+			e.preventDefault();
+			let {proname,proprice,prodes,proqty} = e.target;
+			let product = 
+			{
+				proname : proname.value,
+				proprice : proprice.value,
+				prodes : prodes.value,
+				 proqty : proqty.value
+			}
+			e.target.reset();
+			productarray.push(product);
+			Displayproduct();
+		}
+
+		function Displayproduct()
+		{
+			prolist.innerHTML = "";
+			productarray.forEach((product,index)=>{
+				prolist.innerHTML += 
+				`<li>${product.proname}</li>
+				<li>${product.proprice}</li>
+				<li>${product.prodes}</li>
+				<li>${product.proqty}</li>
+				<li><a href="#" onclick="addcard(${index})">Add To Card</a></li>
+				<li><a href="#" onclick="deletecard(${index})">Delete Card</a></li>
+				<li><a href="#" onclick="editcard(${index})">Edit Product</a></li>`
+			})
+		}
+
+		function addcard(index)
+		{
+			cardpro.push({...productarray[index],proqty:1,total:productarray[index].proprice *1});
+			DisplayCard();
+		}
+
+		function DisplayCard()
+		{
+			cardlist.innerHTML = "";
+			cardpro.forEach(row=>{
+				cardlist.innerHTML +=
+				`<li>${row.proname}</li>
+				<li>${row.proprice}</li>
+				<li>${row.prodes}</li>
+				<li>${row.proqty}</li>`
+			})
+		}
+
+		let proindex = 1;
+
+		function editcard(index)
+		{
+			products.proname.value = productarray[index].proname;
+			products.proprice.value = productarray[index].proprice;
+			products.prodes.value = productarray[index].prodes;
+			products.proqty.value = productarray[index].proqty;
+			proindex = index;
+			btn1.style.display = "none";
+			btn2.style.display = "block"
+		}
+
+		function deletecard(index)
+		{
+			productarray.splice(index,1);
+			Displayproduct();
+		}
+
+
+
+	</script>
+
+		
+
+</body>
+</html>

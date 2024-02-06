@@ -1,0 +1,20 @@
+.container{
+   border: solid 3px black;
+  }
+
+
+.nav-link:hover{
+   color: white;
+   background: orange; 
+   font-size: 1.2rem;
+   text-decoration: underline;
+}
+
+   .navbar-brand{
+       color: black;
+       font-size: 1.7rem;
+     }
+   .navbar-brand:hover{
+       color: black;
+       
+     }

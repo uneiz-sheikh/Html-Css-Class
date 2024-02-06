@@ -1,0 +1,170 @@
+@media screen and (max-width:767px)
+{
+	.navbar
+	{
+		width: 90%;
+	}
+	.logo h2 
+	{
+		font-size: 20px;
+	}
+	.logo img 
+	{
+		width: 22px;
+	}
+	.btn
+	{
+		font-size: 16px;
+		padding: 7px 20px;
+		margin-left: 10px;
+	}
+	.btn2
+	{
+		font-size: 16px;
+		padding: 7px 20px;
+		margin-left: 10px;
+	}
+	.discount_title h4 span 
+	{
+		font-size: 16px;
+	}
+	.discount_title h4 
+	{
+		font-size: 14px;
+	}
+	.banner
+	{
+		background-size: 100% 100%;
+	}
+	.card_img4
+	{
+		width: 100px;
+		height: 100px;
+	}
+	.card_img4 img 
+	{
+		width: 60px;
+		height: 60px;
+	}
+}
+@media screen and (max-width:1175px)
+{
+	.banner_cont2 
+	{
+		width: 60%;
+	}	
+}
+@media screen and (max-width:1200px)
+{
+    .service_sec
+    {
+    	justify-content: center;
+    	flex-wrap: wrap;
+    }
+    .service_sec3
+    {
+    	justify-content: center;
+    	flex-wrap: wrap;
+    }
+    .service_sec2
+    {
+    	justify-content: center;
+    	flex-wrap: wrap;
+    }
+    .service_card3
+    {
+    	margin: 20px;
+    }
+}
+@media screen and (max-width:976px)
+{
+	.banner_cont2 
+	{
+		width: 100%;
+	}
+	.banner
+	{
+		background-color: rgba(0, 0, 0, 0.2);
+		background-blend-mode: overlay;
+		background-size: 100% 100%;
+	}
+}
+@media screen and (max-width:586px)
+{
+	.banner_cont2 h1 
+	{
+		font-size: 30px;
+	}
+	.banner_cont2 p 
+	{
+		font-size: 14px;
+	}	
+	.discount_title h4 span 
+	{
+		font-size: 14px;
+	}
+	.discount_title h4 
+	{
+		font-size: 12px;
+	}
+	.card p 
+	{
+		font-size: 12px;
+	}
+}
+@media screen and (max-width:425px)
+{
+	.banner_cont2 h1 
+	{
+		font-size: 25px;
+	}
+	.banner_btn
+	{
+		font-size: 16px;
+		padding: 7px 20px;
+	}	
+	.service_head h2 
+	{
+		font-size: 20px;
+	}
+	.service_head2 h2 
+	{
+		font-size: 20px;
+	}
+	.service_head  p
+	{
+		font-size: 12px;
+	}
+	.card_img
+	{
+		width: 90px;
+		height: 90px;	
+	}
+	.card img 
+	{	
+		width: 60px;
+		height: 60px;
+	}
+	.content span 
+	{
+		font-size: 18px;
+	}
+}
+@media screen and (max-width:375px)
+{
+	.btn
+	{
+		font-size: 14px;
+		padding: 5px 15px;
+	}
+	.btn2
+	{
+		font-size: 14px;
+		padding: 5px 15px;
+	}
+	.card2
+	{		
+		height: 200px;
+	}	
+}
+

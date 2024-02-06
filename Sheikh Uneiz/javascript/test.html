@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+
+
+	<div>
+		<input type="number" id="Field1"><br><br><br>
+
+
+		<!-- <input type="number" id="Field2">	<br><br><br> -->
+
+		<button type="button" class="btn1" onclick="submitform()">Submit</button>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+
+
+		function submitform()
+		{
+
+			// let A = document.getElementById('Field1').value;
+			// let B = document.getElementById('Field2').value;
+
+			// console.log(typeof A)
+
+
+			// for (var i = A; i <= B; i++) {
+
+			// 	if (i % 2 == 1) {
+
+			// 		document.write(i + "<br>")
+			// 		console.log(i)
+			// 	}
+				
+			// }
+
+
+			// let field = parseInt(document.getElementById('Field1').value);
+
+			// if (field < 0 ) {
+			// 	document.write("Number Is Negative");
+			// }
+			// else if (field > 0)
+			// {
+			// 	document.write("Number Is Positive")
+			// }
+			// else if (field === 0)
+			// {
+			// 	document.write("Number Is Zero")
+			// }
+
+			let field = parseInt(document.getElementById('Field1').value);
+
+			
+			for (var i = 1; i <= 10; i++) {
+				document.write(i*field + "<br>")
+			}
+
+				
+		}
+
+			
+
+
+
+
+		
+		
+
+	</script>
+
+</body>
+</html>

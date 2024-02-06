@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+
+		*
+		{
+			margin: 0;
+			padding: 0;
+		}
+		body
+		{
+			font-family: 'Roboto', sans-serif;
+		}
+		nav
+		{
+			width: 100%;
+			height: 60px;
+			background-color: #e7e7e7;
+		}
+		nav ul
+		{
+			list-style: none;
+			text-align: center;
+		}
+		nav ul li 
+		{
+			display: inline-block;
+			line-height: 60px;
+			margin: 0 15px;
+		}
+		nav ul li a 
+		{
+			text-decoration: none;
+			color: darkblue;
+			font-size: 18px;
+			font-weight: 600;
+		}
+		.banner 
+		{
+			width: 100%;
+			height: 600px;
+			background-image: url('./image/image5.jpg');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-color: rgba(0, 0, 0, 0.4);
+			background-blend-mode: overlay;
+		}
+		#about
+		{
+			width: 100%;			
+			margin: 20px 0;
+			text-align: center;
+		}   
+		section h2
+		{
+			color: darkblue;
+			font-size: 30px;
+			margin: 30px 0;
+			text-decoration: underline;
+		}
+
+		.about_sec1
+		{
+			width: 80%;
+			height: 320px;
+			margin: auto;					
+			text-align: left;
+			background-color: #e7e7e7;
+			padding: 15px 0;
+		}		
+		.about_content1 
+		{
+			width: 48%;			
+			float: left;
+			margin: 10px 0;
+		}
+		.about_content1 video
+		{
+			width: 100%;
+			height: 300px;
+		}
+		.about_content2 
+		{
+			width: 48%;			
+			float: right;			
+			padding: 10px;
+			margin: 20px 20px 20px 0;
+		}
+		.about_content2 h3
+		{
+			font-size: 22px;
+			margin-bottom: 20px;
+
+		}
+		.about_content2 p
+		{
+			margin: 10px 0;
+			word-spacing: 5px;
+			line-height: 25px;
+			font-weight: 500;
+			text-align: justify;
+		}
+		.clear
+		{
+			clear: both;
+		}
+
+		#service_box
+		{
+			width: 100%;
+			text-align: center;	
+			margin: 20px 0;
+		}
+		.card 
+		{
+			width: 25%;
+			background-color: #e7e7e7;
+			display: inline-block;
+			margin: 20px 30px;
+			border: 3px solid lightgray;
+			border-radius: 20px;
+		}
+		.card img 
+		{
+			width: 100%;
+			height: 300px;
+			border-radius: 20px 20px 0 0;
+		}
+        .content
+        {
+        	padding: 10px 7px;
+        }
+        .content h3
+        {
+        	font-size: 22px;
+        	margin: 20px 0;
+        }
+        .content p
+        {
+        	margin: 10px 0;
+        	font-weight: 500;
+        	word-spacing: 2px;
+        }
+        .btn 
+        {
+        	margin: 30px 0 20px 0;        
+			border-radius: 20px;        		
+        }
+        .btn a 
+        {
+        	text-decoration: none;
+        	padding: 7px 20px;
+        	border: 2px solid lightgray;
+        	border-radius: 10px;
+        	color: darkblue;
+        	background-color: #F5EDED;
+        	font-weight: 500;
+        }
+
+        #gallery
+        {
+        	text-align: center;
+        	width: 100%;
+        	margin: 20px 0;
+        }
+        .img_cont
+        {
+        	width: 25%;
+        	display: inline-block;
+        	margin: 10px 10px;
+        }
+        .img_cont img
+        {
+        	width: 100%;
+        	height: 300px;
+        }
+        .img_cont1
+        {
+        	width: 40%; 
+        	display: inline-block;   
+        	margin: 10px 10px; 	
+       }
+        .img_cont1 img
+        {
+        	width: 100%;
+        	height: 300px;
+        }
+        .gallery_cont
+        {
+        	background-color: #e7e7e7;
+        	padding: 15px;
+        }
+
+        #contact_us
+        {
+        	width: 100%;
+        	text-align: center;
+        	margin: 20px auto;
+        }
+        .contact_con
+        {
+        	width: 80%;
+        	margin: 10px auto;
+        }
+        .contact_con h3
+        {
+        	font-size: 22px;
+        	margin: 20px 0;
+        }
+        .contact_con p
+        {
+        	font-weight: 500;
+        	word-spacing: 3px;
+        	line-height: 25px;        	
+        }
+        .map_con
+        {
+        	width: 100%;
+        	margin: 30px 0;        	
+        }
+        .map_con iframe 
+        {
+        	width: 100%;
+        	height: 450px;
+        }
+        .contact_con1
+        {
+        	width: 80%;
+        	margin: 30px auto;          	   	
+        }
+        .address
+        {
+        	width: 30%;
+        	text-align: left;
+        	padding: 10px;
+        	border-right: 2px solid darkblue;
+        	display: inline-block;
+        }
+        .address h4
+        {
+        	font-weight: 500;
+        	font-size: 22px;
+        	margin: 10px 20px;
+        	color: darkblue;
+        }
+        .address p
+        {
+        	margin: 10px 0px 20px 20px;
+        }
+        .form
+        {
+        	width: 50%;
+        	display: inline-block;
+        	text-align: left; 
+        	margin-left: 30px;
+        }        
+        .form label
+        {
+        	margin-left: 30px;
+        	color: darkblue;
+        	font-weight: 500;
+        }
+        .form h2
+        {
+        	text-align: center;
+        }
+        .form input
+        {
+        	border: 2px solid lightgray;
+        	margin-left: 7px;
+        	padding: 7px 20px;
+        }
+        .form textarea 
+        {
+        	margin: 10px 0 0 30px;
+        	border: 2px solid lightgray;
+        }
+        .btn1
+        {        	        
+			border-radius: 20px;    
+			text-align: center;  
+			margin: 20px 0;  		
+        }
+        .btn1 a 
+        {
+        	text-decoration: none;
+        	padding: 7px 30px;
+        	border: 2px solid darkblue;
+        	border-radius: 10px;
+        	color: darkblue;
+        	background-color: #F5EDED;
+        	font-weight: 500;
+        }
+        .footer
+        {
+        	width: 100%;
+        	margin-top: 30px;
+        	height: 60px;
+        	background-color: #e7e7e7;
+        	text-align: center;
+        }
+        .footer h4
+        {
+        	font-weight: 500;
+        	font-size: 22px;
+        	color: darkblue;
+        	line-height: 60px;
+        }
+        .banner_cont
+        {
+        	width: 60%;
+        	margin: 0 auto;        	
+        	text-align: center;
+        }
+        .banner_cont h1
+        {
+        	padding: 20px 0;
+        	font-weight: 800;
+        	line-height: 170px;
+        	font-size: 70px;
+        	color: lightgray;        	
+        }
+        .banner_cont p
+        {
+        	font-weight: 500;
+        	font-size: 20px;
+        	color: lightgray;
+        	word-spacing: 5px;
+        	letter-spacing: 1px;
+        	line-height: 40px;
+        }   
+        .banner_btn
+        {
+        	width: 100px;
+        	margin: 20px auto;
+        	border: 2px solid lightgray;
+        	border-radius: 20px;
+        	padding: 10px 25px;
+        	background-color: rgba(0, 0, 0, 0.5);        	
+        }
+        .banner_btn a 
+        {
+        	text-decoration: none;
+        	color: lightgray;
+        	font-weight: 500;
+        }
+	</style>
+
+</head>
+<body>
+	<div id="header">
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Service</a></li>
+				<li><a href="#">Gallery</a></li>
+				<li><a href="#">Contact Us</a></li>
+
+			</ul>
+		</nav>
+	</div>
+
+	<div class="banner">
+		<div class="banner_cont">
+			<h1>Teacnology, Change The World</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			</p>
+			<p>
+				Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			</p>
+			<div class="banner_btn">
+				<a href="#">Apply Now</a>
+			</div>
+		</div>		
+	</div>
+
+	<section id="about">
+		<h2>About Us</h2>
+		<div class="about_sec1">			
+			<div class="about_content1">
+				<video autoplay muted loop>
+					<source src="./image/video1.mp4" type="">
+				</video>
+			</div>
+			<div class="about_content2">
+				<h3>About My Website,</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			   </p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					qaborum.
+			  </p>
+			</div>
+		</div>	
+	</section>
+	<div class="clear"></div>
+
+	<section id="service_box">
+		<h2>Services</h2>
+		<div class="card">
+			<img src="./image/image2.jpg">
+			<div class="content">
+				<h3>Graphics</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sint occaecat</p>
+				<p>Excepteur sint occaecat cupidatat non roident,</p>
+				<div class="btn">
+					<a href="#">Read more</a>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<img src="./image/image6.jpg">
+			<div class="content">
+				<h3>Graphics</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sint occaecat</p>
+				<p>Excepteur sint occaecat cupidatat non roident,</p>
+				<div class="btn">
+					<a href="#">Read more</a>
+				</div>
+			</div>
+		</div>	
+		<div class="card">
+			<img src="./image/image4.jpg">
+			<div class="content">
+				<h3>Graphics</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sint occaecat</p>
+				<p>Excepteur sint occaecat cupidatat non roident,</p>
+				<div class="btn">
+					<a href="#">Read more</a>
+				</div>
+			</div>
+		</div>	
+	</section>
+
+	<section id="gallery">
+		<h2>Gallery</h2>
+		<div class="gallery_cont">
+			<div class="img_cont">
+				<img src="./image/image8.jpg">
+			</div>
+			<div class="img_cont1">
+				<img src="./image/image7.png">
+			</div>
+			<div class="img_cont">
+				<img src="./image/image9.jpg">
+			</div>		
+				
+			<div class="img_cont1">
+				<img src="./image/image10.jpg">
+			</div>
+			<div class="img_cont">
+				<img src="./image/image11.jpg">
+			</div>
+			<div class="img_cont">
+				<img src="./image/image12.jpg">
+			</div>
+		</div>		
+	</section>
+
+	<section id="contact_us">
+		<h2>Contact Us</h2>
+		<div class="contact_con">
+			<h3>Thanks For Visiting,</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure  reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div class="map_con">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117763.5565839864!2d75.78144885375639!3d22.724109980768283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1686543104602!5m2!1sen!2sin" width="1640" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<div class="contact_con1">
+		    <div class="address">
+		    	<h4>Address</h4>
+		    	<p>72, Madina Nagar, Azad Nagar,<br>
+		    		Indore, (M.P.)
+		    	</p>
+		    	<h4>Email Id.</h4>
+		    	<p>Sheikhuneiz719@gmail.com</p>
+		    	<h4>Phone No.</h4>
+		    	<p>7869184038</p>
+		    	<h4>Social</h4>
+		    	<p>WWW.Google.com</p>
+		    </div> 
+		    <div class="form">
+		    	<h2>Please Enter Your Details</h2>          
+	  			<form>
+	  				<label>Name :</label>
+	  				<input type="text" name="">	  				
+
+	  				<label>Email Adr.</label>
+	  				<input type="email" name="Email"><br><br>
+
+	  				<label>Address :</label><br>
+	  				<textarea rows="7" cols="80"></textarea><br><br>
+                    
+	  				<div class="btn1">
+	  					<a href="#">Submit</a>
+	  				</div>
+	  			</form>
+		    </div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="footer">
+			<h4>Copyright@2023 Html/CSS.com</h4>
+		</div>
+	</footer>
+</body>
+</html>

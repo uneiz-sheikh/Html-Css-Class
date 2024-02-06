@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+</head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        width: 100vw;
+        background: linear-gradient(to bottom right, rgba(255, 234, 167, 0.25), rgba(253, 203, 110, 0.75));
+        overflow-x: hidden;
+    }
+    
+    label {
+        color: gray;
+    }
+    
+    hr {
+        color: #dc3545;
+        border: 3px solid #dc3545 !important;
+    }
+    
+    input {
+        font-weight: bold;
+        color: red;
+    }
+    
+    #fff input {
+        background: rgba(255, 234, 167, 0.10);
+    }
+    
+    p {
+        font-family: serif;
+    }
+</style>
+
+
+<body>
+
+    <div class="container m-sm-5 border border-danger border-4">
+        <h1 class="text-center fst-italic pt-3 fw-bold display-3 text-danger">Form</h1>
+        <div class="row mx-sm-5  p-sm-4">
+            <div class="col-sm-6">
+                <div class="">
+                    <div class="form-group p-2">
+                        <label class="mb-1 form-label">First Name</label>
+                        <input id="fname" onkeyup="removeError('fname','validationFname')" type="text" class="form-control border border-danger text-danger fw-bold">
+                        <span class="text-danger " id="validationFname"></span>
+
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group p-2">
+                        <label class="mb-1 form-label">Last Name</label>
+                        <input id="lname" onkeyup="removeError('lname','validationLname')" type="text" class="form-control border border-danger text-danger fw-bold">
+                        <span class="text-danger " id="validationLname"></span>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group p-2">
+                        <label class="mb-1 form-label">Email</label>
+                        <input id="Email" onkeyup="removeError('Email','validationEmail')" type="text" class="form-control border border-danger text-danger fw-bold">
+                        <span class="text-danger " id="validationEmail"></span>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group p-2">
+                        <label class="mb-1 form-label">Mobile no.</label>
+                        <input id="num" onkeyup="removeError('num','validationNum')" type="text" class="form-control border border-danger text-danger fw-bold">
+                        <span class="text-danger " id="validationNum"></span>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group p-2">
+                        <label class="mb-1 form-label">Qualification</label>
+                        <select id="Qualification" onclick="removeError('Qualification','qualify')" class="form-select border border-danger text-danger fw-bold">
+                            <option value="">chose options</option>
+                            <option>M.B.A</option>
+                            <option>B.B.A</option>
+                            <option>M.C.A</option>
+                            <option>B.C.A</option>
+                            <option>M.Tec.</option>
+                            <option>B.Tec.</option>
+                            <option>B.Com</option>
+                            <option>M.Com</option>
+                        </select>
+                        <span class="text-danger " id="qualify"></span>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group p-2">
+                        <label class="mb-1 form-label">Address</label>
+                        <textarea id="Address" onkeyup="removeError('Address','Add')" class="form-control border border-danger text-danger fw-bold"></textarea>
+                        <span class="text-danger " id="Add"></span>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group p-2">
+                        <label class="mb-1 form-label">Skills</label><br>
+                        <input type="checkbox" value="HTML" class="btn-check" id="html" onclick="removeError('html','Skills')" autocomplete="off">
+                        <label class="btn btn-outline-danger" for="html">HTML</label>
+
+                        <input type="checkbox" value="CSS" class="btn-check" id="css" onclick="removeError('css','Skills')" autocomplete="off">
+                        <label class="btn btn-outline-danger" for="css">CSS</label>
+
+                        <input type="checkbox" value="Bootstrap" class="btn-check" id="bootstrap" onclick="removeError('bootstrap','Skills')" autocomplete="off">
+                        <label class="btn btn-outline-danger" for="bootstrap">Bootsrap </label>
+
+                        <input type="checkbox" value="JavaScript" class="btn-check" id="java" onclick="removeError('java','Skills')" autocomplete="off">
+                        <label class="btn btn-outline-danger" for="java">Java Script</label><br>
+
+                        <span class="text-danger " id="Skills"></span>
+
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group p-2">
+                        <label class="mb-1 form-label">Gender</label><br>
+
+                        <input type="radio" class="btn-check" name="gender" id="Gender1" onclick="removeError('Gender1','Gender')" value="Male" autocomplete="off">
+                        <label class="btn btn-outline-danger mb-2 px-3" for="Gender1">Male</label><br>
+
+                        <input type="radio" class="btn-check" name="gender" id="Gender2" onclick="removeError('Gender2','Gender')" value="Female" autocomplete="off">
+                        <label class="btn btn-outline-danger" for="Gender2">Female</label><br>
+                        <span class="text-danger " id="Gender"></span>
+                    </div>
+                </div>
+                <div class=" ">
+                    <div class="form-group p-2">
+                        <label class="mb-1 form-label">Marital Status</label><br>
+
+                        <input type="radio" id="married" onclick="removeError('married','Marital')" class="btn-check " value="Married" name="marital" autocomplete="off">
+                        <label class="btn btn-outline-danger mb-2 px-4" for="married">Married</label><br>
+
+                        <input type="radio" id="Unmarried" onclick="removeError('Unmarried','Marital')" class="btn-check " value="Unmarried" name="marital" autocomplete="off">
+                        <label class="btn btn-outline-danger px-3" for="Unmarried">Unmarried</label><br>
+                        <span id="Marital" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div id="userDetails" class="d-none ">
+                    <div class="">
+                        <div class="pt-sm-3">
+                            <p id="Fullname" class="fw-bold fs-2 text-danger"></p>
+                            <hr id="userFname" class="d-none">
+
+                            <p id="E_mail" class="fw-bold fs-2 text-danger"></p>
+                            <hr id="userEmail" class="d-none">
+
+                            <p id="Mb_no" class="fw-bold fs-2 text-danger"></p>
+                            <hr id="userMb" class="d-none">
+
+                            <p id="qualifiy" class="fw-bold fs-2 text-danger"></p>
+                            <hr id="userQualifiy" class="d-none">
+
+                            <p id="addressShow" class="fw-bold fs-2 text-danger"></p>
+                            <hr id="userAddress" class="d-none">
+
+                            <p id="skillShow" class="fw-bold fs-2 text-danger"></p>
+                            <hr id="userSkills" class="d-none">
+
+                            <p id="genderShow" class="fw-bold fs-2 text-danger"></p>
+                            <hr id="userGender" class="d-none">
+
+                            <p id="maritalShow" class="fw-bold fs-2 text-danger"></p>
+                            <hr id="userMarital" class="d-none">
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row mb-sm-5">
+
+            <div id="sub" class="col-sm-6 offset-sm-3 mt-5 ">
+                <div class="d-grid gap-2 ">
+                    <button onclick="FormValidation()" class="btn btn-danger px-5" type="button">Submit</button>
+                </div>
+                <!-- <div id="test3">
+
+                </div> -->
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            alert('Hello');
+            $('input,textarea,select').focus(function() {
+                $(this).css('background', 'pink');
+            });
+
+            $('input,textarea,select').blur(function() {
+                $(this).css('background', 'white');
+            });
+
+            $('input').select(function() {
+                $(this).css('background', 'lightyellow');
+            });
+
+            $('#Qualification').change(function() {
+                var a = $(this).val();
+                $('#test3').html(a);
+            });
+
+            $('.container').submit(function() {
+                alert('Form Submit');
+            });
+
+
+        });
+    </script>
+
+
+    <script type="text/javascript" src="./form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
